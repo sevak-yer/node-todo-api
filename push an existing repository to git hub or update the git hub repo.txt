@@ -1,0 +1,5 @@
+git remote add origin https://github.com/sevak-yer/node-todo-api.git
+git push -u origin master
+
+for updating the git hub repo: git push
+or:			       gir push origin remote 
