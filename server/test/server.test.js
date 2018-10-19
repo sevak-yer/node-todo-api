@@ -185,7 +185,7 @@ describe('PATCH/ todos/:id', () => {
                     expect(typeof res.completedAt).toBe('string');
                     done();
                 }).catch((e) => {
-                    done(e);
+                    done(e); 
                 });
                 
             });
