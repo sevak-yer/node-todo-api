@@ -15,7 +15,7 @@ var UserSchema = new mongoose.Schema({
             validator: (value) => {
                 return validator.isEmail(value);  
             },
-            message: '{VALUE} is not a valid email'
+            message: `This email is not a valid`
         }
     },
     password: {
@@ -58,7 +58,7 @@ UserSchema.methods.generateAuthToken = function () {
 UserSchema.statics.findByToken = function (token) {
     var User = this;
     var decoded;
-
+    //try catch block is used to be able to continue the code exceution even if there is an error in the try block
     try {
         decoded = jwt.verify(token, 'abc123');
     } catch (e) {

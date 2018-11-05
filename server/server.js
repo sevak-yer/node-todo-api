@@ -107,7 +107,7 @@ app.post('/users', (req, res) => {
     //     password: body.password
     // }
     );
-user.save().then((/*doc*/) => {
+    user.save().then((/*doc*/) => {
         // res.send(doc);
         return user.generateAuthToken();
 
