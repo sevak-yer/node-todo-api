@@ -47,12 +47,12 @@ UserSchema.methods.generateAuthToken = function () {
     var user = this;
     var access = 'auth';
     var token  = jwt.sign({_id: user._id.toHexString(), access}, 'abc123').toString();
-    var tokenLength = user.tokens.length;
-    if (tokenLength !== 0) {
-        for (var i=0; i<tokenLength; i++) {
-            user.tokens.pop();
-        };
-    }
+    // var tokenLength = user.tokens.length;
+    // if (tokenLength !== 0) {
+    //     for (var i=0; i<tokenLength; i++) {
+    //         user.tokens.pop();
+    //     };
+    // }
     user.tokens = user.tokens.concat([{access, token}]);
 
     return user.save().then(() => {
